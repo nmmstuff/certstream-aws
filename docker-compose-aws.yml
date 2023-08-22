@@ -1,0 +1,18 @@
+version: '3.8'
+services: 
+  certstream-server: 
+    image: 178258615948.dkr.ecr.us-east-1.amazonaws.com/certstream-server
+    build: 
+      context: ./certstream-server
+    container_name: certstream-server
+    expose: 
+      - "4000"
+        #ports: 
+        #- "4000:4000"
+  certstream-client: 
+    image: 178258615948.dkr.ecr.us-east-1.amazonaws.com/certstream-client
+    container_name: certstream-client
+    depends_on: 
+      - certstream-server
+    build:
+      context: ./certstream-client
