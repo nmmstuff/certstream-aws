@@ -2,8 +2,23 @@
 CERTSTREAM
 
 
-Detecting phishing campains using certificate transparency logs and filtering them by keywords.
+Detecting phishing campains using certificate transparency logs and filtering by keywords.
+Notification findings by:
+- mail
+  
+![image](https://github.com/nmmstuff/certstream-aws/assets/142457788/d313915f-e3bc-4cd3-9219-ab0e636e150a)
 
+- telegram
+  
+![image](https://github.com/nmmstuff/certstream-aws/assets/142457788/cb1b00c6-85ce-4b87-a5cb-7c51ea94df5d)
+
+Fields:
+- Date of the finding
+- Domain - CN in the certificate
+- CDu - Date of the last update made to whois information of domain
+- Delta - Number of days since CDu
+- urlscan - Url from urlscan.io with screenshot from the site
+  
 The purpose is to run the certstream-server docker and a custom certstream-client docker in an AWS ECS service (cost efficiency).
 
 - certstream-server docker
